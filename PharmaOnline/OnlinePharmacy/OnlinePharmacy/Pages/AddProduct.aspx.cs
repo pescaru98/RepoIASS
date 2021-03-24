@@ -93,6 +93,7 @@ namespace OnlinePharmacy.Pages
                 byte[] bytes = convertStreamToByteArray(pictureStream);
                 newProduct = new Product(productName.Text, Convert.ToInt32(price_per_unit.Text), Convert.ToInt32(units.Text), category.Text, bytes);
                 execInsert(newProduct.name, newProduct.price_per_unit, newProduct.units, newProduct.tag, newProduct.picture, cnn);
+                reinitForm();
             }
 
            
