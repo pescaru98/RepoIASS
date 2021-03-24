@@ -12,6 +12,29 @@ namespace OnlinePharmacy.Models
         public int price_per_unit { get; set; }
         public int units { get; set; }
         public string tag { get; set; }
-        //TODO add image type
+        public byte[] picture { get; set; }
+
+        public Product(int product_id, string name, int price_per_unit, int units, string tag, byte[] picture)
+        {
+            this.product_id = product_id;
+            this.name = name;
+            this.price_per_unit = price_per_unit;
+            this.units = units;
+            this.tag = tag;
+            this.picture = picture;
+        }
+
+        public Product(string name, int price_per_unit, int units, string tag, byte[] picture)
+        {
+            this.name = name;
+            this.price_per_unit = price_per_unit;
+            this.units = units;
+            this.tag = tag;
+            this.picture = picture;
+        }
+
+        public Product()
+        {
+        }
     }
 }

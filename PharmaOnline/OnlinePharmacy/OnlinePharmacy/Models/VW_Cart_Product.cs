@@ -15,6 +15,6 @@ namespace OnlinePharmacy.Models
         public int price_per_unit { get; set; }
         public int product_units { get; set; }
         public string tag { get; set; }
-        //add image type
+        public byte[] picture { get; set; }
     }
 }
