@@ -1,0 +1,2 @@
+INSERT INTO USERS (username,password,role,name,surname,email) values ("regularuser1","1234","REGULAR","Ion", "Popescu","ion.popescu@gmail.com");
+INSERT INTO USERS (username,password,role,name,surname,email) values ("pharmacist1","1234","PHARMACIST","Ioana", "Farmacista","ioana.farma@gmail.com");
