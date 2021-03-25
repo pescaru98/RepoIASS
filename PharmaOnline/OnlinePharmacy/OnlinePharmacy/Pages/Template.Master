@@ -15,7 +15,7 @@
     </asp:ContentPlaceHolder>
 
 </head>
-<body>
+<body style="background:#EEEEEE;">
     <form id="form1" runat="server">
         <div>
 
@@ -35,7 +35,7 @@
                         <a class="nav-link" href="/Pages/Orders.aspx">Comenzile mele</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Pages/Feedback/aspx">Feedback</a>
+                        <a class="nav-link" href="/Pages/Feedback.aspx">Feedback</a>
                     </li>
                     <%}%>
                     <% if (Session["role"] == "PHARMACIST")

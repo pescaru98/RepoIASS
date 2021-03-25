@@ -36,5 +36,15 @@ namespace OnlinePharmacy.Services
             }
             return false;
         }
+
+        public string convertIntArrayToStringWithDelimitator(int[] array)
+        {
+            string returnedString = "";
+            for(int i = 0; i < array.Length; i++)
+            {
+                returnedString += array[i] + ",";
+            }
+            return returnedString.Substring(0, returnedString.Length - 1);
+        }
     }
 }

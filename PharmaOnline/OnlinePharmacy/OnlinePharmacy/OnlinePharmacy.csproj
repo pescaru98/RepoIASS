@@ -196,7 +196,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CartService.cs" />
+    <Compile Include="Services\EmailService.cs" />
     <Compile Include="Services\MySQLService.cs" />
+    <Compile Include="Services\OrderService.cs" />
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\UtilService.cs" />
   </ItemGroup>

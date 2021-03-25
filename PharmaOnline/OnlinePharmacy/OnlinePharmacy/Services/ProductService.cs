@@ -41,5 +41,33 @@ namespace OnlinePharmacy.Services
             }
            
         }
+
+        public bool updateUnitsOfProduct(int product_id, int newUnits)
+        {
+            try
+            {
+                string insertCmd = "UPDATE product SET units = @newUnits WHERE product_id = @product_id";
+
+                connection.Open();
+
+                MySqlCommand comm = connection.CreateCommand();
+                comm.CommandText = insertCmd;
+                comm.Parameters.AddWithValue("@product_id", product_id);
+                comm.Parameters.AddWithValue("@newUnits", newUnits);
+                comm.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+
+            }
+        }
     }
 }
