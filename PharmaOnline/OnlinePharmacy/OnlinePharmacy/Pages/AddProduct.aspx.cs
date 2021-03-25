@@ -45,6 +45,8 @@ namespace OnlinePharmacy.Pages
                 newProduct = new Product(productName.Text, Convert.ToInt32(price_per_unit.Text), Convert.ToInt32(units.Text), category.Text, bytes);
                 productService.insert(newProduct.name, newProduct.price_per_unit, newProduct.units, newProduct.tag, newProduct.picture);
                 reinitForm();
+
+                //TODO Add notify message
             }
 
            

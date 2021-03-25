@@ -43,5 +43,59 @@ namespace OnlinePharmacy.Services
 
             return list;
         }
+
+        public bool removeProductFromCart(int cart_product_id)
+        {
+            try
+            {
+                string deleteString = "delete from cart_product where cart_product_id = @cart_product_id";
+                connection.Open();
+
+                MySqlCommand cmd = new MySqlCommand(deleteString, connection);
+                cmd.Parameters.AddWithValue("@cart_product_id", cart_product_id);
+
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                return false;
+                
+            }
+            finally
+            {
+                connection.Close();
+
+            }
+        }
+
+        public bool removeProductsOfUserId(int user_id)
+        {
+            try
+            {
+                string deleteString = "delete from cart_product where user_id = @user_id";
+                connection.Open();
+
+                MySqlCommand cmd = new MySqlCommand(deleteString, connection);
+                cmd.Parameters.AddWithValue("@user_id", user_id);
+
+                cmd.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                return false;
+                
+            }
+            finally
+            {
+                connection.Close();
+
+            }
+        }
     }
 }
