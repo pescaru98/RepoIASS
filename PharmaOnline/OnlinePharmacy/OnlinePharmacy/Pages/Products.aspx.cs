@@ -69,15 +69,9 @@ namespace OnlinePharmacy.Pages
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["user_id"] = 1;
-            Session["username"] = "Test";
-            Session["password"] = "1234";
-            Session["role"] = "REGULAR";
-            Session["name"] = "Ioana";
-            Session["surname"] = "Farmacista";
-            Session["email"] = "pescaru98@gmail.com";
-            //if (Session["username"] == null || Session["username"] == "")
-            //  Response.Redirect("ErrorPage.aspx");
+
+            if (Session["username"] == null || Session["username"] == "")
+              Response.Redirect("ErrorPage.aspx");
 
             allProducts = productService.getAllByUserId();
 
