@@ -19,7 +19,7 @@ namespace OnlinePharmacy.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["username"] == null || Session["username"] == "" || Session["role"] != "PHARMACIST")
+            if (Session["username"] == null || Session["username"] == "" || Session["role"].ToString() != "PHARMACIST")
                 Response.Redirect("ErrorPage.aspx");
 
         }

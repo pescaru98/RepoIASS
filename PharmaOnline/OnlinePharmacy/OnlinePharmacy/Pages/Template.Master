@@ -26,7 +26,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/Pages/Products.aspx">Produse</a>
                     </li>
-                    <% if (Session["role"] == "REGULAR")
+                    <% 
+                        if (Session["role"].ToString() == "REGULAR")
                         {%>
                     <li class="nav-item">
                         <a class="nav-link" href="/Pages/Cart.aspx">Cosul meu</a>
@@ -38,7 +39,7 @@
                         <a class="nav-link" href="/Pages/Feedback.aspx">Feedback</a>
                     </li>
                     <%}%>
-                    <% if (Session["role"] == "PHARMACIST")
+                    <% if (Session["role"].ToString() == "PHARMACIST")
                         {%>
                     <li class="nav-item">
                         <a class="nav-link" href="/Pages/AddProduct.aspx">Adauga produse</a>

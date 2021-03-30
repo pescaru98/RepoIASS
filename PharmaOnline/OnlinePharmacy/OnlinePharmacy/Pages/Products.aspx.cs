@@ -58,7 +58,8 @@ namespace OnlinePharmacy.Pages
 
             newPanel.Controls.Add(mainImage);
             newPanel.Controls.Add(table);
-            newPanel.Controls.Add(addBtn);
+            if(Session["Role"].ToString() == "REGULAR")
+                newPanel.Controls.Add(addBtn);
 
             return newPanel;
 

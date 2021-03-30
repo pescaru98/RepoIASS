@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- Fisa pentru feedback -->
+
+<Feedback>
+ <textbox nume="nume" detalii="Introduceți numele : "/>
+ <textbox nume="title" detalii="Titlul : "/>
+ <textbox nume="context" detalii="Feedback-ul : "/>
+ <radio nume = "rating" detalii="Pe o scară de la 1 la 10 cat va placut aplicatia ?">
+	<var>1</var>
+	<var>2</var>
+	<var>3</var>
+	<var>4</var>
+	<var>5</var>
+	<var>6</var>
+	<var>7</var>
+	<var>8</var>
+	<var>9</var>
+	<var>10</var>
+	</radio>
+</Feedback>

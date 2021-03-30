@@ -71,7 +71,7 @@ namespace OnlinePharmacy.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["username"] == null || Session["username"] == "" || Session["role"] != "REGULAR")
+            if (Session["username"] == null || Session["username"] == "" || Session["role"].ToString() != "REGULAR")
                 Response.Redirect("ErrorPage.aspx");
 
             allAddedProductsOfUser = cartService.getAllByUserId(Convert.ToInt32(Session["user_id"]));

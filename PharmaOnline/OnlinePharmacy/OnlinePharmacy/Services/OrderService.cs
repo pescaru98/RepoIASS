@@ -42,5 +42,36 @@ namespace OnlinePharmacy.Services
 
 
         }
+
+        public List<VW_Order_Product> getAllOrderProductsOfUserId(int user_id)
+        {
+            List<VW_Order_Product> list = new List<VW_Order_Product>();
+
+            try
+            {
+                string selectString = "select * from vw_order_product where user_id = @user_id";
+                connection.Open();
+
+                MySqlCommand cmd = new MySqlCommand(selectString, connection);
+                cmd.Parameters.AddWithValue("@user_id", user_id);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read() && rdr.HasRows)
+                {
+                    list.Add(VW_Order_Product.convertFromSqlReader(rdr.GetValue(0), rdr.GetValue(1), rdr.GetValue(2), rdr.GetValue(3), rdr.GetValue(4), rdr.GetValue(5), rdr.GetValue(6), rdr.GetValue(7), rdr.GetValue(8), rdr.GetValue(9), rdr.GetValue(10)));
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+
+            }
+
+            return list;
+        }
     }
 }
