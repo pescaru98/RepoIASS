@@ -8,7 +8,7 @@ namespace OnlinePharmacy.Services
 {
     public class MySQLService
     {
-        private string connectionString = "Server=localhost;Database=pharmaonline;Uid=dev;Pwd=;";
+        private string connectionString = "Server=localhost;Database=farmacieonline;Uid=root;Pwd=dorina20;";
         protected MySqlConnection connection;
 
         public MySQLService()

@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using OnlinePharmacy.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,35 @@ namespace OnlinePharmacy.Services
         public ProductService() : base()
         {
 
+        }
+        public List<Product> getAllByUserId()
+        {
+            List<Product> list = new List<Product>();
+
+            try
+            {
+                string selectString = "select * from product";
+                connection.Open();
+
+                MySqlCommand cmd = new MySqlCommand(selectString, connection);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read() && rdr.HasRows)
+                {
+                    list.Add(Product.convertFromSqlReader(rdr.GetValue(0), rdr.GetValue(1), rdr.GetValue(2), rdr.GetValue(3), rdr.GetValue(4), rdr.GetValue(5)));
+                }
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+            }
+            finally
+            {
+                connection.Close();
+
+            }
+
+            return list;
         }
 
         public bool insert(string name, int price_per_unit, int units, string tag, byte[] picture)
