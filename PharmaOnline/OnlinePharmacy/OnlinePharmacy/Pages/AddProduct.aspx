@@ -26,7 +26,7 @@
         <div>
             <label for="picture">Poza</label>
             <br />
-            <asp:FileUpload ID="picture" runat="server" CssClass="btn btn-primary" />
+            <asp:FileUpload ID="picture" runat="server"  CssClass="btn btn-primary" />
         </div>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Introduceti poza" ControlToValidate="picture"></asp:RequiredFieldValidator><br />
             <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Fisierul introdus nu este o poza" OnServerValidate="CustomValidator1_ServerValidate" ControlToValidate="picture"></asp:CustomValidator>

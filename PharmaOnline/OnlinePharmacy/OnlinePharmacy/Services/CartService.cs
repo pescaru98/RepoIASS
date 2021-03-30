@@ -97,5 +97,33 @@ namespace OnlinePharmacy.Services
 
             }
         }
+
+        public bool insert( int user_id, int product_id, int units)
+        {
+            try
+            {
+                string insertCmd = "INSERT INTO CART_PRODUCT (user_id, product_id,units) VALUES (@user_id, @product_id,@units)";
+                connection.Open();
+
+                MySqlCommand comm = connection.CreateCommand();
+                comm.CommandText = insertCmd;
+                comm.Parameters.AddWithValue("@user_id", user_id);
+                comm.Parameters.AddWithValue("@product_id", product_id);
+                comm.Parameters.AddWithValue("@units", units);
+                comm.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine(e.Message);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+
+            }
+
+        }
     }
 }

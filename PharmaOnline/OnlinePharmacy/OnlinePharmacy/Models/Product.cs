@@ -33,6 +33,12 @@ namespace OnlinePharmacy.Models
             this.picture = picture;
         }
 
+       
+        public static Product convertFromSqlReader(object product_id, object name, object price_per_unit, object picture, object units, object tag)
+        {
+            return new Product((int)product_id, (string)name, (int)price_per_unit, (int)units, (string)tag, (byte[])picture);
+        }
+
         public Product()
         {
         }

@@ -21,7 +21,7 @@ namespace OnlinePharmacy.Pages
             Session["user_id"] = 1;
             Session["username"] = "Test";
             Session["password"] = "1234";
-            Session["role"] = "PHARMACIST";
+            Session["role"] = "REGULAR";
             Session["name"] = "Ioana";
             Session["surname"] = "Farmacista";
             Session["email"] = "pescaru98@gmail.com";
